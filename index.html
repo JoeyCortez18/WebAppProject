@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Gamer Form Quiz</title>
+
+    <style>
+      .jumbotron {
+        width: 90%;
+        background-image: url('controllers.jpg');
+        padding: 10px;
+        margin: auto;
+      }
+      .lead {
+        color: white;
+      }
+      .text {
+        color: white;
+      }
+      body {
+
+        background: #09D0E1;
+      }
+      h1 {
+        color: white;
+        text-align: center;
+      }
+      #section {
+        display: flex;
+        width: 90%;
+        background-color: white;
+        padding: 10px;
+        margin: auto;
+      }
+      #sidebar {
+        width: 30%;
+        border: 1px solid black;
+      }
+
+      #main {
+        width: 70%;
+        border: 1px solid black;
+      }
+    </style>
+
+  </head>
+
+
+  <body>
+    <div class="jumbotron">
+     <h1 class="display-4"> Gamer Quiz!</h1> 
+    <p class="lead">Hello Gamer! Take the 5 question quiz below to find out if you are a rookie, average or pro gamer!</p>
+    <hr class ="my-4">
+    <p class= "text"> If you are a rookie gamer, then you have a small experience of gaming and are still learning. If you are an average gamer, you have more knowledge than a rookie. If you are a pro, then you have been gaming for many years and know a lot more than what most people know. </p>
+  </div>
+
+  <div id="section">
+  <div class="container">
+    <form id="myform">
+
+
+
+  <p></p>
+
+  <div class="row">
+  <div class="col-sm-4">
+  <p>How long have you been gaming for?</p></div>
+  <div class="col-sm-8">
+  <input type="radio" name="gaming" value="0" id="0-5 years" /><label for="0-5 years">0-5 years</label>
+  <input type="radio" name="gaming" value="1" id="6-10 years" /><label for="6-10 years">6-10 years</label>
+  <input type="radio" name="gaming" value="2" id="11-15 years" /><label for="11-15 years">11-15 years</label>
+  <input type="radio" name="gaming" value="3" id="16-20 years" /><label for="16-20 years">16-20 years</label>
+  <input type="radio" name="gaming" value="4" id="21+ years" /><label for="21+ years">21+ years</label>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-sm-4">
+  <p>Which of the following was one of your first console?</p></div>
+  <div class="col-sm-8">
+  <input type="radio" name="first" value="2" id="N64" /><label for="N64">N64</label>
+  <input type="radio" name="first" value="3" id="PS1" /><label for="PS1">PS1</label>
+  <input type="radio" name="first" value="4" id="Gamecube" /><label for="Gamecube"> Nintendo Gamecube</label>
+  <input type="radio" name="first" value="1" id="Xbox" /><label for="Xbox">Original Xbox</label>
+  <input type="radio" name="first" value="0" id="Other" /><label for="Other">Other: I have never owned any of these.</label>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+  <p>Which of the following is your favorite gaming console?</p></div>
+  <div class="col-sm-8">
+  <input type="radio" name="favorite" value="1" id="Nintendo" /><label for="Nintendo">Nintendo</label>
+  <input type="radio" name="favorite" value="3" id="Playsation" /><label for="Playsation">Playstation</label>
+  <input type="radio" name="favorite" value="2" id="Xbox" /><label for="Xbox"> Xbox</label>
+  <input type="radio" name="favorite" value="4" id="all" /><label for="all">I like all 3 equally.</label>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-sm-4">
+  <p>Which company for gaming would you rather work at?</p></div>
+  <div class="col-sm-8">
+  <input type="radio" name="company" value="2" id="Microsoft" /><label for="Microsoft">Microsoft (Xbox)</label>
+  <input type="radio" name="company" value="3" id="Sony" /><label for="Sony">Sony (Playstation)</label>
+  <input type="radio" name="company" value="1" id="Nintendo" /><label for="Nintendo"> Nintendo (DS, Switch, Wii, etc.)</label>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-sm-4">
+  <p>Would you ever compete competitively in gaming?</p></div>
+  <div class="col-sm-8">
+  <input type="radio" name="compete" value="3" id="Yes" /><label for="Yes">Yes</label>
+  <input type="radio" name="compete" value="1" id="No" /><label for="No">No</label>
+  <input type="radio" name="compete" value="2" id="Maybe" /><label for="Maybe"> Maybe </label>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-sm-2">
+  <p></p></div>
+  <div class="col-sm-10">
+  <button type="submit">Submit</button>
+
+
+<p id="grade2"></p>
+
+  </div>
+  </div>
+  </div>
+
+
+
+  </form>
+
+
+
+
+
+  </div>
+  </div>
+
+  <script>
+document.getElementById("myform").onsubmit=function() {
+       gaming = parseInt(document.querySelector('input[name = "gaming"]:checked').value);
+     first = parseInt(document.querySelector('input[name = "first"]:checked').value);
+     favorite = parseInt(document.querySelector('input[name = "favorite"]:checked').value);
+     company = parseInt(document.querySelector('input[name = "company"]:checked').value);
+     compete = parseInt(document.querySelector('input[name = "compete"]:checked').value);
+     
+     
+     result = gaming + first + favorite + company + compete;
+     
+  
+
+
+     if(result < 4) {
+document.getElementById("grade2").innerHTML = "You got Rookie gamer. Welcome to gaming!";
+}
+
+   if(result >=4 && result < 16) {
+document.getElementById("grade2").innerHTML = "You got Average gamer. Keep working on improving!";
+}
+  
+  if(result >=17) {
+document.getElementById("grade2").innerHTML = "You got PRO GAMER. AMAZING!";
+}   
+  
+
+     
+
+
+return false; // required to not refresh the page; just leave this here
+} //this ends the submit function
+
+</script>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
